@@ -2,7 +2,7 @@
 
 const checkOddEven = (num) => {
     if(num % 2 === 0){
-        console.log(`Odd`);
+        console.log(`Even`);
     }else{
         console.log(`Odd`);
     }
