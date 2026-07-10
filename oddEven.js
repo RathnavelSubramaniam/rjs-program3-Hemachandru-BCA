@@ -2,13 +2,13 @@
 
 const checkOddEven = (num) => {
     if(num % 2 === 0){
-        console.log(`Even`);
+        console.log(`Odd`);
     }else{
         console.log(`Odd`);
     }
 
 };
 
-checkOddEven(0);
+checkOddEven(2);
 
 module.exports = checkOddEven;
