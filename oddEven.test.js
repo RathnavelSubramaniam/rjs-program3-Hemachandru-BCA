@@ -1,25 +1,43 @@
 const checkOddEven = require("./oddEven");
 
-test("8 is Even", () => {
-    expect(checkOddEven(8)).toBe("Even");
-});
+describe("Odd/Even", () => {
+    let spy;
 
-test("5 is Odd", () => {
-    expect(checkOddEven(5)).toBe("Odd");
-});
+    beforeEach(() => {
+        spy = jest.spyOn(console, "log").mockImplementation(() => {});
+    });
 
-test("0 is Even", () => {
-    expect(checkOddEven(0)).toBe("Even");
-});
+    afterEach(() => {
+        spy.mockRestore();
+    });
 
-test("-7 is Odd", () => {
-    expect(checkOddEven(-7)).toBe("Odd");
-});
+    test("8 is Even", () => {
+        checkOddEven(8);
+        expect(spy).toHaveBeenCalledWith("Even");
+    });
 
-test("-10 is Even", () => {
-    expect(checkOddEven(-10)).toBe("Even");
-});
+    test("5 is Odd", () => {
+        checkOddEven(5);
+        expect(spy).toHaveBeenCalledWith("Odd");
+    });
 
-test("101 is Odd", () => {
-    expect(checkOddEven(101)).toBe("Odd");
+    test("0 is Even", () => {
+        checkOddEven(0);
+        expect(spy).toHaveBeenCalledWith("Even");
+    });
+
+    test("-7 is Odd", () => {
+        checkOddEven(-7);
+        expect(spy).toHaveBeenCalledWith("Odd");
+    });
+
+    test("-10 is Even", () => {
+        checkOddEven(-10);
+        expect(spy).toHaveBeenCalledWith("Even");
+    });
+
+    test("101 is Odd", () => {
+        checkOddEven(101);
+        expect(spy).toHaveBeenCalledWith("Odd");
+    });
 });
