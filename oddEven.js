@@ -9,4 +9,6 @@ const checkOddEven = (num) => {
 
 };
 
+checkOddEven(5);
+
 module.exports = checkOddEven;
